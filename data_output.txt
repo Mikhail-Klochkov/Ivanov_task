@@ -1,0 +1,20 @@
+sort_insert_algoritm: 29   micro_sec  
+sort_insert_algoritm: 21   micro_sec  
+sort_insert_algoritm: 24   micro_sec  
+sort_insert_algoritm: 32   micro_sec  
+sort_insert_algoritm: 34   micro_sec  
+new  sort_insert_algoritm: 1979900   micro_sec  
+new  sort_insert_algoritm: 1993371   micro_sec  
+new  sort_insert_algoritm: 1938861   micro_sec  
+new  sort_insert_algoritm: 2354   micro_sec  
+new  sort_insert_algoritm: 2492   micro_sec  
+new  sort_insert_algoritm: 2285   micro_sec  
+new  sort_insert_algoritm: 633   micro_sec  
+new  sort_insert_algoritm: 639   micro_sec  
+new  sort_insert_algoritm: 2164   micro_sec  
+new  sort_insert_algoritm: 2548   micro_sec  
+new  sort_insert_algoritm: 2640   micro_sec  
+new  sort_insert_algoritm: 2250766   micro_sec  
+new  sort_insert_algoritm: 2094417   micro_sec  
+new  sort_insert_algoritm: 294270   micro_sec  
+new  sort_insert_algoritm: 20623   micro_sec  

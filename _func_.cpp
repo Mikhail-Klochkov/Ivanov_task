@@ -2,6 +2,10 @@
 #include <stdlib.h>
 #include <ctime>
 #include <random>
+#include <chrono>
+#include <stddef.h>
+#include <fstream>
+
 
 #include "decl.h"
 
@@ -158,7 +162,6 @@ void create_data(arr2D & DATA, int* arr, const std::size_t & _size_,
                int & iteration_r, int & iteration_d) {
 
     std::cout << "work_create_data: " << "\n";
-    print(arr, _size_);
     int flag = 1;
     bool (*comp)(int &, int &, int ) = NULL;
     comp = &compare;
@@ -174,7 +177,7 @@ void create_data(arr2D & DATA, int* arr, const std::size_t & _size_,
         dublicate_arr(bubble_sort_one(DATA._arr_[iter + 1],  _size_, comp, flag), DATA._arr_[iter] , _size_); 
     }
    
-  DATA.print();
+ // DATA.print();
   delete [] temp;
 
 }

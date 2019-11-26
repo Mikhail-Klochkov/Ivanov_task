@@ -61,7 +61,7 @@ void quick_sort(int * _arr_, int left, int right); // range is mutable
 int _partition_0(int * _arr_, int left, int right);
 void quickSortMiddle(int *a, int left, int right);
 int non_stable_quick(int *arr, int start, int end);
-
+void sort_insert(int * arr, const std::size_t _size_);
 
 #endif // DECL_H
 
