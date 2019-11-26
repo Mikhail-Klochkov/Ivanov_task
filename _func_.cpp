@@ -7,9 +7,9 @@
 
 void _swap_(int * lhs, int * rhs)
 {
-	int temp = *lhs;
-	*lhs = *rhs;
-	*rhs = temp;
+  int temp = *lhs;
+  *lhs = *rhs;
+  *rhs = temp;
 }
 
 bool compare(int & lhs, int & rhs, int flag)
@@ -17,43 +17,44 @@ bool compare(int & lhs, int & rhs, int flag)
      if (flag == 1)
         return (lhs > rhs); // if bigger then
      else
-     	return (lhs < rhs); // if smaller then
+      return (lhs < rhs); // if smaller then
 
 }
 
 void print(const int * _arr_, const std::size_t &  _size_)
 {
-	std::cout << std::endl;
-	for(std::size_t i = 0 ; i < _size_ ; i++)
-		 std::cout << _arr_[i] << "  ";
+  std::cout << std::endl;
+  for(std::size_t i = 0 ; i < _size_ ; i++)
+     std::cout << _arr_[i] << "  ";
 }
 
 
 void generate_arr(int * _arr_, const std::size_t & _size_, const int & left, const int & right)
 {
-	if(right <= left){
-		std::cout << "'right' should be more then 'left'" << std::endl;
-	}
+  if(right <= left){
+    std::cout << "'right' should be more then 'left'" << std::endl;
+  }
     for(std::size_t iter = 0 ; iter < _size_ ; iter++)
-    	_arr_[iter] = rand() % (right - left + 1);
+      _arr_[iter] = rand() % (right - left + 1);
 }
+
 
 int * bubble_sort(int* _arr_, const std::size_t &  _size_,
                         bool (*compare)(int & a, int & b, int flag), int flag, int & sum)
 {
-	int i = 0;
-	char  swap_cnt = 0;
+  int i = 0;
+  char  swap_cnt = 0;
     sum = 0; 
     if(_size_ == 0)
-    	 return (0); 
+       return (0); 
      while(i < _size_) {
          if(i + 1 != _size_ && compare(_arr_[i], _arr_[i + 1], flag)) { // flag is define which operator of comparing need us
-         	_swap_(&_arr_[i], &_arr_[i + 1]);
+          _swap_(&_arr_[i], &_arr_[i + 1]);
             swap_cnt = 1;
          }
          i++;
          if(i == _size_) {
-         	sum++;
+          sum++;
          }
          if(i == _size_ && swap_cnt == 1) { 
             swap_cnt = 0;
@@ -62,6 +63,7 @@ int * bubble_sort(int* _arr_, const std::size_t &  _size_,
     }
     return (_arr_);
 }
+
 
 int non_stable_quick(int *arr, int start, int end){
     
@@ -110,17 +112,35 @@ void quickSortMiddle(int *a, int left, int right)
           quickSortMiddle(a,leftI,right); // < not <=
 }
 
+void sort_insert(int * arr, const std::size_t _size_) {
+
+      int buf_min = arr[0];
+      int _index_ = 0;
+          for(int iter =  0 ; iter < _size_ - 1 ;++iter){
+            
+      buf_min = arr[iter];
+           _index_ = iter;
+
+              for(int j = iter; j < _size_; ++j){
+                        if( arr[j] < buf_min )
+               _index_ = j; // index is minimal elements in subarray
+                     buf_min = arr[_index_] ;
+                                        }
+
+                _swap_( &arr[iter], &arr[_index_]);   
+              }
+}
 
 int * bubble_sort_one(int* _arr_, const std::size_t &  _size_,
                         bool (*compare)(int & a, int & b, int flag), int flag) // Тоже самое, что и bubble_sort только он проходит один раз помассиву
 { 
-	int i = 0;
+  int i = 0;
     if(_size_ == 0)
-    	 return (0); 
+       return (0); 
     
     while(i < _size_) {
          if(i + 1 != _size_ && compare(_arr_[i], _arr_[i + 1], flag)) { // flag is define which operator of comparing need us
-         	_swap_(&_arr_[i], &_arr_[i + 1]);
+          _swap_(&_arr_[i], &_arr_[i + 1]);
          }
          i++;
     }
@@ -130,12 +150,12 @@ int * bubble_sort_one(int* _arr_, const std::size_t &  _size_,
 void dublicate_arr(const int * copy_arr, int * dublicat, const std::size_t & _size_ )
 {
     for(int i = 0; i < _size_ ; i++) 
-    	dublicat[i] = copy_arr[i];
+      dublicat[i] = copy_arr[i];
 }
 
 
 void create_data(arr2D & DATA, int* arr, const std::size_t & _size_, 
-	             int & iteration_r, int & iteration_d) {
+               int & iteration_r, int & iteration_d) {
 
     std::cout << "work_create_data: " << "\n";
     print(arr, _size_);
@@ -158,4 +178,3 @@ void create_data(arr2D & DATA, int* arr, const std::size_t & _size_,
   delete [] temp;
 
 }
-
